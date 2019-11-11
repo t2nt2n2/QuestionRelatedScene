@@ -1,0 +1,46 @@
+{
+    "name": "Friends_Bert",
+    "n_gpu": 1,
+
+    "arch": {
+        "type": "FriendsBertModel",
+        "args": {}
+    },
+    "data_loader": {
+        "type": "FriendsBertDataLoader",
+        "args":{
+            "data_dir": "dataset/output.csv",
+            "batch_size": 1,
+            "shuffle": true,
+            "validation_split": 0.1,
+            "num_workers": 1
+        }
+    },
+    "optimizer": {
+        "type": "BertAdam",
+        "args":{
+
+            "lr": 2e-5,
+            "warmup": 0.1
+        }
+    },
+    "loss": "triplet_loss",
+    "metrics": [
+        "my_metric"
+    ],
+    "trainer": {
+        "epochs": 100,
+
+        "save_dir": "saved/",
+        "save_period": 1,
+        "verbosity": 2,
+        
+        "monitor": "min val_loss",
+        "early_stop": 10,
+
+        "tensorboard": {
+    	    "enabled": true,
+    	    "modules": ["tensorboardX", "torch.utils.tensorboard"]
+    	}
+    }
+}
