@@ -143,7 +143,7 @@ FaceNet, VGG-Face, ArcFace and Dlib are [overperforming](https://youtu.be/i_MOwv
 
 | Model | LFW Score | YTF Score |
 | ---   | --- | --- |
-| Dreamary AI | 99.65% | - |
+| Dreamary AI | 99.72% | - |
 | Facenet512 | 99.65% | - |
 | SFace | 99.60% | - |
 | ArcFace | 99.41% | - |
